@@ -62,7 +62,7 @@ import java.util.concurrent.*;
  *
  */
 @Slf4j
-public class ThreadResponse {
+public class CompletableFuture {
 
     private static ThreadFactory threadFactory = new ThreadFactoryBuilder()
             .setNameFormat("demo").build();
@@ -127,7 +127,7 @@ public class ThreadResponse {
        try {
 
 
-            CompletableFuture<Long> future = CompletableFuture.supplyAsync(() -> {
+            java.util.concurrent.CompletableFuture<Long> future = java.util.concurrent.CompletableFuture.supplyAsync(() -> {
                 Long sum = 0L;
 
                 for (int i = 0; i <= 5000000 ; i++) {
@@ -136,7 +136,7 @@ public class ThreadResponse {
                 return sum;
             },threadPool);
 
-           CompletableFuture<Long> future2 = CompletableFuture.supplyAsync(() -> {
+           java.util.concurrent.CompletableFuture<Long> future2 = java.util.concurrent.CompletableFuture.supplyAsync(() -> {
                Long sum = 0L;
 
                for (int i = 5000001; i <= 100000000 ; i++) {
@@ -151,7 +151,7 @@ public class ThreadResponse {
            },threadPool);
 
            System.out.println("开始等待");
-           CompletableFuture.allOf(future2, future).join();
+           java.util.concurrent.CompletableFuture.allOf(future2, future).join();
 
            System.out.println(future.get()+future2.get());
 
