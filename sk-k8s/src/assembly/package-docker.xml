@@ -1,0 +1,64 @@
+<assembly>
+	<id>${project.version}</id>
+
+
+	<formats>
+		<format>tar.gz</format>
+	</formats>
+
+
+	<includeBaseDirectory>false</includeBaseDirectory>
+
+	<dependencySets>
+		<dependencySet>
+			<useProjectArtifact>true</useProjectArtifact>
+			<outputDirectory>/lib</outputDirectory>
+			<scope>runtime</scope>
+		</dependencySet>
+	</dependencySets>
+
+
+	<fileSets>
+		<fileSet>
+			<directory>${project.basedir}</directory>
+			<includes>
+				<include>README.md</include>
+			</includes>
+		</fileSet>
+		<fileSet>
+			<directory>logs</directory>
+			<outputDirectory>/logs</outputDirectory>
+			<excludes>
+				<exclude>**.md</exclude>
+				<exclude>/*.log</exclude>
+				<exclude>/*.gz</exclude>
+				<exclude>/backup/*.log</exclude>
+			</excludes>
+			<useDefaultExcludes>true</useDefaultExcludes>
+		</fileSet>
+
+
+		<fileSet>
+			<fileMode>755</fileMode>
+			<!-- 打包前将该目录下的文件换行符替换成LF -->
+			<lineEnding>unix</lineEnding>
+			<directory>${project.basedir}/bin</directory>
+			<outputDirectory>bin</outputDirectory>
+			<includes>
+				<include>/*</include>
+			</includes>
+		</fileSet>
+
+
+		<fileSet>
+			<directory>${project.basedir}/src/main/resources</directory>
+			<outputDirectory>config</outputDirectory>
+			<includes>
+				<include>/**</include>
+			</includes>
+		</fileSet>
+	</fileSets>
+
+
+
+</assembly>

@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: text-server
+  labels:
+    app: text-server
+  namespace: app
+spec:
+  replicas: 1
+  template:
+    metadata:
+      name: text-server
+      labels:
+        app: text-server
+    spec:
+      containers:
+        - name: text-server
+          image: registry.cn-qingdao.aliyuncs.com/sd-app/sd-k8s:0.0.5
+          imagePullPolicy: IfNotPresent
+          resources:
+            requests:
+              memory : "1500Mi"
+              cpu: "1"
+            limits:
+              memory : "3000Mi"
+              cpu: "2"
+      restartPolicy: Always
+  selector:
+    matchLabels:
+      app: text-server
+

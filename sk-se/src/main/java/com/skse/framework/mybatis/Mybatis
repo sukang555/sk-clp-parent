@@ -1,0 +1,40 @@
+
+//初始化过程
+
+
+@ConfigurationProperties(prefix = MybatisProperties.MYBATIS_PREFIX)
+public class MybatisProperties
+
+
+
+MybatisAutoConfiguration
+      @Bean
+      @ConditionalOnMissingBean
+      public SqlSessionFactory sqlSessionFactory(DataSource dataSource){
+            SqlSessionFactoryBean factory = new SqlSessionFactoryBean();
+
+            //数据源
+            factory.setDataSource(dataSource);
+            //配置
+            configuration
+            //mapper声明映射
+            Map<String, MappedStatement> mappedStatements =
+                new StrictMap<MappedStatement>("Mapped Statements collection");
+
+      }
+
+  @Bean
+  @ConditionalOnMissingBean
+  public SqlSessionTemplate sqlSessionTemplate(SqlSessionFactory sqlSessionFactory) {
+    ExecutorType executorType = this.properties.getExecutorType();
+    if (executorType != null) {
+      return new SqlSessionTemplate(sqlSessionFactory, executorType);
+    } else {
+      return new SqlSessionTemplate(sqlSessionFactory);
+    }
+  }
+
+//使用过程
+
+    MapperProxy -> MapperMethod -> MapperMethod ->
+        SqlSessionTemplate ->  DefaultSqlSession(Configuration,Executor)

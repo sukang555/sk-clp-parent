@@ -1,0 +1,33 @@
+
+SqlSessionFactoryBean  -> SqlSessionFactory -> SqlSession(DefaultSqlSession) -> ExecuteSql;
+                                                        |
+                                               (this class is not Thread-Safe)
+                                                        |
+                                                  SqlSessionTemplate
+
+
+
+
+组件1
+    执行器
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

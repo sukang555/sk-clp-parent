@@ -1,0 +1,9 @@
+server:
+  port: 18181
+
+anytxn:
+  cup:
+    server:
+      source: CUP
+      hosts: 10.0.23.10:38019
+

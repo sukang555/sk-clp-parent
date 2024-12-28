@@ -1,0 +1,10 @@
+${AnsiColor.GREEN}
+   _____   _        _____        _  __   ___     _____
+  / ____| | |      |  __ \      | |/ /  / _ \   / ____|
+ | |      | |      | |__) |_____| ' /  | (_) | | (___
+ | |      | |      |  ___/______|  <    > _ <   \___ \
+ | |____  | |____  | |          | . \  | (_) |  ____) |
+  \_____| |______| |_|          |_|\_\  \___/  |_____/
+
+SPRING BOOT VERSION IS ${spring-boot.formatted-version}
+APPLICATION VERSION IS ${application.formatted-version}
