@@ -14,27 +14,13 @@ import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-public class DateUtil {
+public class LocalDateTimeAPI {
 
 	private static final String DEFAULT_FORMAT = "yyyy-MM-dd HH:mm:ss";
 
 
 	private static DateTimeFormatter formatter = DateTimeFormatter
 			.ofPattern("yyyy-MM-dd HH:mm:ss");
-
-
-	@Test
-    public void main41(){
-
-        ArrayList<AccountBalanceInfo> arrayList = new ArrayList<>();
-
-        BigDecimal reduce = arrayList.stream().map(AccountBalanceInfo::getBalance)
-                .reduce(BigDecimal.ZERO, BigDecimal::add);
-
-        System.out.println(reduce);
-
-    }
-
 
 
 

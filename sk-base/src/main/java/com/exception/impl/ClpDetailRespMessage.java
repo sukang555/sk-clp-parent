@@ -32,10 +32,6 @@ public enum  ClpDetailRespMessage implements IExceptionMsgDetail {
 
     private String enDetailMsg;
 
-    ClpDetailRespMessage(RespMessage respMessage) {
-        this.respMessage = respMessage;
-    }
-
     ClpDetailRespMessage(RespMessage respMessage, String code, String cnDetailMsg, String enDetailMsg) {
         this.respMessage = respMessage;
         this.code = code;
