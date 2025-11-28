@@ -1,6 +1,7 @@
 package com.sk.netty.channel;
 
 import com.exception.ClpExceptionUtils;
+import com.exception.impl.ClpSysErrorMsg;
 import com.sk.netty.config.NettyClientProperties;
 import com.sk.netty.utils.InetSocketAddressUtils;
 import io.netty.bootstrap.Bootstrap;
@@ -108,7 +109,7 @@ public abstract class AbstractChannelClient implements ChannelClient {
         Channel channel = getChannel();
 
         if (channel == null){
-            ClpExceptionUtils.throwStringException().throwException("Can't get a valid channel ");
+            ClpExceptionUtils.trowsException(ClpSysErrorMsg.VALID_CHANNEL);
         }
 
         return channel;

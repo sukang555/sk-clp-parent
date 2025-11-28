@@ -1,4 +1,5 @@
-import com.exception.ClpException;
+import com.exception.ClpExceptionUtils;
+import com.exception.impl.ClpParamErrorMsg;
 
 /**
  * @Author: sukang
@@ -9,11 +10,19 @@ public class ClpExceptionTest {
 
 
     public static void main(String[] args) {
-
         try {
-            throw new ClpException("errorMessage", "");
-        }catch (Exception e){
+            assertParam(null);
+        } catch (Exception e) {
             e.printStackTrace();
         }
+
+
+
+    }
+
+
+
+    public static void assertParam(String id){
+        ClpExceptionUtils.assertParam(() -> id == null, ClpParamErrorMsg.PARAM_ERROR, "id");
     }
 }

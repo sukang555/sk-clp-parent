@@ -78,7 +78,7 @@ public class MathRandom {
                     break;
                 }
             }
-        }catch(Exception e){
+        }catch(Exception ignored){
         }
         return random;
     } 
