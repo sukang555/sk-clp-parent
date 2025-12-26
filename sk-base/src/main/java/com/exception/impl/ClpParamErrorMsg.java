@@ -4,7 +4,7 @@ import com.exception.IExceptionMsgDetail;
 
 public enum ClpParamErrorMsg implements IExceptionMsgDetail {
 
-    PARAM_ERROR("1000002", "请求入参{}不合法", "request param {} is invalid ")
+    PARAM_ERROR("100000", "请求入参{}:{}不合法", "request param {} is invalid ")
     ;
 
     private final String code;
@@ -31,6 +31,6 @@ public enum ClpParamErrorMsg implements IExceptionMsgDetail {
 
     @Override
     public String getCode() {
-        return "COM:" + PARAM_ERROR_CODE + this.code;
+        return PARAM_ERROR_CODE + this.code;
     }
 }

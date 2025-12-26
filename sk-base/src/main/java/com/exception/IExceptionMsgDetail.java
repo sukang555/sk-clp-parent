@@ -8,9 +8,9 @@ import java.util.Objects;
  */
 public interface IExceptionMsgDetail {
 
-    String SYSTEM_ERROR_CODE = "101";
-    String PARAM_ERROR_CODE = "102";
-    String DB_ERROR_CODE = "103";
+    String SYSTEM_ERROR_CODE = "1001";
+    String PARAM_ERROR_CODE = "1002";
+    String DB_ERROR_CODE = "1003";
 
     String getCnDetailMsg();
 

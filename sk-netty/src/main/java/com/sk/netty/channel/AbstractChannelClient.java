@@ -109,7 +109,7 @@ public abstract class AbstractChannelClient implements ChannelClient {
         Channel channel = getChannel();
 
         if (channel == null){
-            ClpExceptionUtils.trowsException(ClpSysErrorMsg.VALID_CHANNEL);
+            ClpExceptionUtils.trowsException(ClpSysErrorMsg.SYSTEM_ERROR);
         }
 
         return channel;

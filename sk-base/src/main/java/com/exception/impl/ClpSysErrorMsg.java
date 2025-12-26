@@ -9,8 +9,7 @@ import com.exception.IExceptionMsgDetail;
 public enum ClpSysErrorMsg implements IExceptionMsgDetail {
 
 
-    SYSTEM_ERROR("0000001","Sys Error ","Sys Error"),
-    VALID_CHANNEL("","Can't get a valid channel","Can't get a valid channel")
+    SYSTEM_ERROR("100000","Sys Error ","Sys Error"),
     ;
 
     private final String code;
@@ -37,6 +36,6 @@ public enum ClpSysErrorMsg implements IExceptionMsgDetail {
 
     @Override
     public String getCode() {
-        return "COM:" + SYSTEM_ERROR_CODE + this.code;
+        return SYSTEM_ERROR_CODE + this.code;
     }
 }

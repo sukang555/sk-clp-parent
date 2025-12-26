@@ -8,6 +8,7 @@ import org.slf4j.helpers.MessageFormatter;
  */
 public class ClpException extends RuntimeException {
 
+
     public ClpException(IExceptionMsgDetail format, Object... args) {
         this(format, args, (args == null || args.length == 0) ? null :
                 args[args.length - 1] instanceof Throwable ? (Throwable) args[args.length - 1] : null);
